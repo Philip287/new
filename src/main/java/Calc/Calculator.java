@@ -14,7 +14,7 @@ public class Calculator {
         System.out.println("Enter number : \n" +
                 "1. If you wont add two numbers. \n" +
                 "2. If you wont subtract two numbers \n" +
-                "3. If you wont divide two numbers \n " +
+                "3. If you wont divide two numbers \n" +
                 "4. If you wont multiply two numbers \n" +
                 "5 If you wont exit.");
         System.out.print("Enter your number :");
@@ -22,26 +22,31 @@ public class Calculator {
         int choice = (int) Math.round(choiceDouble);
         switch (choice) {
             case 1:
-                System.out.print("The result of the operation is a number: ");
+                addition(x, y);
+                menu();
                 break;
             case 2:
-                System.out.print("The result of the operation is a number: ");
-                System.out.println(addition(x, y));
+                subtract (x, y);
+                menu();
                 break;
             case 3:
-                System.out.print("The result of the operation is a number: ");
+                divide (x , y);
+                menu();
                 break;
             case 4:
-                System.out.print("The result of the operation is a number: ");
+                multiply(x , y);
+                menu();
                 break;
             case 5:
                 System.out.print("Good by!");
                 break;
             default:
                 System.out.println("You enter un correct data! Try again");
-        }
+                menu();
+        }while (choice != 5);
 
     }
+
 
     public static Double Scanner() {
         Scanner in = new Scanner(System.in);
@@ -50,18 +55,33 @@ public class Calculator {
             double a = Double.parseDouble(str1);
             return a;
         } catch (Exception e) {
-            System.out.println("Try again! ");
+            System.out.print("Try again! Enter number :");
         }
         return Scanner();
     }
 
     public static double addition(double x, double y) {
         double result = x + y;
+        System.out.println("The result of the operation is a number: " + result);
         return result;
     }
 
-    public double difference(double x, double y) {
+    public static double subtract(double x, double y) {
         double result = x - y;
+        System.out.println("The result of the operation is a number: " + result);
         return result;
     }
+
+    public static double divide(double x, double y){
+        double result = x / y;
+        System.out.println("The result of the operation is a number: " + result);
+        return result;
+    }
+
+    public static double multiply (double x, double y) {
+        double result = x * y;
+        System.out.println("The result of the operation is a number: " + result);
+        return result;
+    }
+
 }
