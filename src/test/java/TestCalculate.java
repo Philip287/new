@@ -1,4 +1,3 @@
-
 import Calc.Calculator;
 import org.junit.Test;
 
@@ -15,10 +14,30 @@ public class TestCalculate {
         double a = 10;
 
         // WHEN
-        double h = calculator.addition(5, 5);
+        double h = calculator.Addition(5, 5);
 
         // THEN
         assertEquals(a, h);
+
+    }
+
+    @Test
+    public void testScanner() {
+
+    }
+
+    @Test
+    public void testIsSubtract() {
+
+    }
+
+    @Test
+    public void testDivide() {
+
+    }
+
+    @Test
+    public void testMultiply() {
 
     }
 
