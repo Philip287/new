@@ -12,10 +12,10 @@ public class TestCalculate {
     public void testAddition_positiveFlow() {
 
         // GIVEN
-        int a = 10;
+        double a = 10;
 
         // WHEN
-        int h = calculator.addition(5, 5);
+        double h = calculator.addition(5, 5);
 
         // THEN
         assertEquals(a, h);
