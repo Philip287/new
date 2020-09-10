@@ -16,7 +16,7 @@ public class Calculator {
                 "3. If you wont divide two numbers. \n" +
                 "4. If you wont multiply two numbers. \n" +
                 "5 If you wont exit.");
-        System.out.print("Enter your number :");
+        System.out.print("Enter your choice :");
         double choiceDouble = Scanner();
         int choice = (int) Math.round(choiceDouble);
         switch (choice) {
@@ -52,8 +52,8 @@ public class Calculator {
         Scanner in = new Scanner(System.in);
         try {
             String str1 = in.nextLine();
-            double a = Double.parseDouble(str1);
-            return a;
+            double b = Double.parseDouble(str1);
+            return b;
         } catch (Exception e) {
             System.out.print("Try again! Enter number :");
         }
@@ -79,7 +79,8 @@ public class Calculator {
             return result;
         } else {
             System.out.println("Operation with number 0 is pointless.");
-        } return 0;
+        }
+        return 0;
     }
 
     public static double Multiply(double x, double y) {
