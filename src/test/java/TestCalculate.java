@@ -7,33 +7,9 @@ import static org.junit.Assert.*;
 public class TestCalculate {
 
     Calculator calculator = new Calculator();
-    @BeforeClass
-    public static void beforeClass() {
-        System.out.println("");
-        System.out.println("Before CalculatorTest.class");
-    }
-
-    @AfterClass
-    public static void afterClass() {
-        System.out.println("");
-        System.out.println("After CalculatorTest.class");
-    }
-
-    @Before
-    public void initTest() {
-        System.out.println("");
-        System.out.println("initTest()");
-        Calculator calculator = new Calculator();
-    }
-
-    @After
-    public void afterTest() {
-        System.out.println("afterTest()");
-        calculator = null;
-    }
 
     @Test
-    public static void testAddition_positiveFlow() {
+    public void testAddition_positiveFlow() {
         // GIVEN
         double source = Addition(5, 5);
 
@@ -46,7 +22,7 @@ public class TestCalculate {
     }
 
     @Test
-    public static void testAddition_unPositiveFlow()throws Exception {
+    public void testAddition_unPositiveFlow()throws Exception {
         // GIVEN
         double source = Addition(5, 5);
 
@@ -72,7 +48,7 @@ public class TestCalculate {
 //    }
 
     @Test
-    public static void testIsSubtract_positiveFlow() {
+    public void testIsSubtract_positiveFlow() {
         // GIVEN
         double a = 1.0;
 
@@ -85,7 +61,7 @@ public class TestCalculate {
     }
 
     @Test
-    public static void testIsSubtract_unPositiveFlow()throws Exception {
+    public void testIsSubtract_unPositiveFlow()throws Exception {
         // GIVEN
         double a = 0.0;
 
@@ -99,7 +75,7 @@ public class TestCalculate {
 
 
     @Test
-    public static void testDivide_positiveFlow() {
+    public void testDivide_positiveFlow() {
         // GIVEN
         double a = 5.0;
 
@@ -111,7 +87,7 @@ public class TestCalculate {
     }
 
     @Test
-    public static void testDivide_unPositiveFlow() throws Exception {
+    public void testDivide_unPositiveFlow() throws Exception {
         // GIVEN
         double a = 0.0;
 
@@ -124,12 +100,12 @@ public class TestCalculate {
     }
 
     @Test
-    public static void testMultiply_positiveFlow()  {
+    public void testMultiply_positiveFlow()  {
         assertEquals("Unexpected string value", Multiply(5, 5), 25, 0);
     }
 
     @Test
-    public static void testMultiply_unPositiveFlow() throws Exception {
+    public void testMultiply_unPositiveFlow() throws Exception {
         assertEquals("Unexpected string value", Multiply(5, 5), 26, 0);
     }
 
