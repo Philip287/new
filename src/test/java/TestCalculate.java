@@ -1,12 +1,36 @@
 import Calc.Calculator;
-import com.sun.xml.internal.ws.util.StringUtils;
-import org.junit.Test;
+import org.junit.*;
 
-import static Calc.Calculator.Addition;
-import static Calc.Calculator.Subtract;
+import static Calc.Calculator.*;
 import static org.junit.Assert.*;
 
 public class TestCalculate {
+
+    Calculator calculator = new Calculator();
+    @BeforeClass
+    public static void beforeClass() {
+        System.out.println("");
+        System.out.println("Before CalculatorTest.class");
+    }
+
+    @AfterClass
+    public static void afterClass() {
+        System.out.println("");
+        System.out.println("After CalculatorTest.class");
+    }
+
+    @Before
+    public void initTest() {
+        System.out.println("");
+        System.out.println("initTest()");
+        Calculator calculator = new Calculator();
+    }
+
+    @After
+    public void afterTest() {
+        System.out.println("afterTest()");
+        calculator = null;
+    }
 
     @Test
     public static void testAddition_positiveFlow() {
@@ -22,7 +46,7 @@ public class TestCalculate {
     }
 
     @Test
-    public static void testAddition_unPositiveFlow() {
+    public static void testAddition_unPositiveFlow()throws Exception {
         // GIVEN
         double source = Addition(5, 5);
 
@@ -35,7 +59,7 @@ public class TestCalculate {
     }
 
 //    @Test
-//    public void testScanner() {
+//    public void testScanner()throws Exception {
 //        // GIVEN
 //        double source = Calculator.Scanner(str1.getBytes(10));
 //
@@ -61,7 +85,7 @@ public class TestCalculate {
     }
 
     @Test
-    public static void testIsSubtract_unPositiveFlow() {
+    public static void testIsSubtract_unPositiveFlow()throws Exception {
         // GIVEN
         double a = 0.0;
 
@@ -75,23 +99,38 @@ public class TestCalculate {
 
 
     @Test
-    public void testDivide_positiveFlow() {
+    public static void testDivide_positiveFlow() {
+        // GIVEN
+        double a = 5.0;
+
+        // WHEN
+        double h = Divide(5, 1);
+
+        // THEN
+        assertEquals("Unexpected string value", a, h, 0);
+    }
+
+    @Test
+    public static void testDivide_unPositiveFlow() throws Exception {
+        // GIVEN
+        double a = 0.0;
+
+        // WHEN
+        double h = Divide(5, 5);
+
+        // THEN
+        assertEquals("Unexpected string value", a, h, 0);
 
     }
 
     @Test
-    public void testDivide_unPositiveFlow() {
-
+    public static void testMultiply_positiveFlow()  {
+        assertEquals("Unexpected string value", Multiply(5, 5), 25, 0);
     }
 
     @Test
-    public void testMultiply_positiveFlow() {
-
-    }
-
-    @Test
-    public void testMultiply_unPositiveFlow() {
-
+    public static void testMultiply_unPositiveFlow() throws Exception {
+        assertEquals("Unexpected string value", Multiply(5, 5), 26, 0);
     }
 
 }
